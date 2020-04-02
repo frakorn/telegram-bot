@@ -12,3 +12,8 @@ bot.on('message', (msg) => {
 });
 
 
+function myFunc(arg) {
+  console.log(`arg was => ${arg}`);
+}
+
+setInterval(myFunc, 10000, 'ping');
