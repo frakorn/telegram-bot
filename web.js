@@ -1,15 +1,20 @@
 var express = require('express');
-var packageInfo = require('./package.json');
+var path = require('path');
 
+var port = process.env.PORT || 3000;
 var app = express();
 
-app.get('/', function (req, res) {
-  res.json({ version: packageInfo.version });
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-var server = app.listen(process.env.PORT, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log('Web server started at http://%s:%s', host, port);
+app.listen(port, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(`server started port: ${port}`);
+  }
+});
 });
