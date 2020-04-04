@@ -2,8 +2,6 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {polling: true});
 
-// YOUR CODE STARTS HERE
-
 // Listen for any kind of message in chat
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
@@ -11,9 +9,8 @@ bot.on('message', (msg) => {
   bot.sendMessage(chatId, 'Received your message.' + chatId);
 });
 
-
-function myFunc(arg) {
-  console.log(`arg was => ${arg}`);
+function myFunc() {
+  console.log('ping');
 }
-
-setInterval(myFunc, 10000, 'ping');
+// make a ping to check if service is alive :)
+setInterval(myFunc, 10000);

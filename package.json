@@ -1,13 +1,13 @@
 {
   "name": "mybot",
   "version": "1.0.0",
-  "description": "",
+  "description": "a telegram bot",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "",
+  "author": "Francesco Cini",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.1",
